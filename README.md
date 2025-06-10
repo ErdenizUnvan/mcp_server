@@ -4,6 +4,10 @@ mcp server for string tools(count words and capitalize each word) and getting we
 
 python version: 3.12.9
 
+pip install huggingface_hub
+
+pip install transformers
+
 pip install langchain_core
 
 pip install --upgrade --force-reinstall langgraph
