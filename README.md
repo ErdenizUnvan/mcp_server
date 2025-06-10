@@ -33,3 +33,5 @@ at another teminal run:
 python test_ai_agent.py
 
 How to use:
+
+https://www.youtube.com/watch?v=wfSz8sHNO7o
