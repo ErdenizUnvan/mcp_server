@@ -58,8 +58,7 @@ async def main():
         result = classifier(user_input, candidate_labels)
         top_label = result['labels'][0]
         top_score = result['scores'][0]
-        print(f'{top_label} and {top_score}')
-        THRESHOLD = 0.55
+        THRESHOLD = 0.65
         if top_label == 'other' or top_score < THRESHOLD:
             print('Out of scope as function!')
         else:
@@ -79,17 +78,13 @@ async def main():
                 async with ClientSession(read, write) as session:
                     await session.initialize()
                     tools = await load_mcp_tools(session)
-                    #print([tool.name for tool in tools])
                     selected_tools = [tool for tool in tools if tool.name==top_label]
-                    print(f'selected_tools:{selected_tools}')
-                    #print(all_tools)
-                    #agent = create_react_agent(model, tools)
                     agent = create_react_agent(chat_model, selected_tools)
 
                     msg = {"messages": user_input}
                     response = await agent.ainvoke(msg)
 
-                    print("\n🧾 Yanıt:")
+                    print("\n🧾 Response:")
                     tool_output_found = False
                     for m in response["messages"]:
                         if m.type == "tool":
