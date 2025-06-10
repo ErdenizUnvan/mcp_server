@@ -8,11 +8,7 @@ from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
 from langchain_ollama import ChatOllama
 import os
-from transformers import (
-    AutoTokenizer,
-    AutoModelForSequenceClassification,
-    pipeline
-)
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 
 MODEL_DIR = r"C:\Users\Dell\llama3_2\mcp\project\facebook-bart-large-mnli"
 
