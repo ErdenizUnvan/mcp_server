@@ -80,7 +80,7 @@ async def main():
                     msg = {"messages": user_input}
                     response = await agent.ainvoke(msg)
 
-                    print("\n🧾 Response:")
+                    print("\nResponse:")
                     tool_output_found = False
                     for m in response["messages"]:
                         if m.type == "tool":
