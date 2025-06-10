@@ -1,5 +1,7 @@
 # mcp_server
 
+mcp server for string tools(count words and capitalize each word) and getting weather temperature for a specific city by celcius 
+
 python version: 3.12.9
 
 pip install langchain_core
